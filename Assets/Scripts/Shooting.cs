@@ -33,7 +33,7 @@ public class Shooting : MonoBehaviour
          GameObject bullet = Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
          Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
          rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
-         Destroy(bullet, 1.5f);
+         Destroy(bullet, 3f);
          
      }
  }
