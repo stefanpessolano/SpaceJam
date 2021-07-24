@@ -9,6 +9,7 @@ TagManager:
   - Water
   - Enemy
   - Bullet
+  - Electric
   layers:
   - Default
   - TransparentFX
