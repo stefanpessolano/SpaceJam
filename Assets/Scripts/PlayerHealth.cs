@@ -8,11 +8,6 @@ public class PlayerHealth : MonoBehaviour
     public int Health = 100;
     public Image healthBar;
 
-    private bool electricOn = false;
-
-    private float electricOffDelay = 3;
-    private float electricOnDelay = 2;
-
     private float fireTimeDelay = 0;
     private float waterTimeDelay = 0;
 
