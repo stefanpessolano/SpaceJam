@@ -17,10 +17,10 @@ public class PlayerHealth : MonoBehaviour
         }
         if(timeDelay < 0)
         {
-            print("RAN");
+           
             timeDelay = 0;
         }
-        print(timeDelay);
+   
         healthBar.fillAmount = Mathf.Clamp(Health / 100f, 0, 1f);
     }
     private void OnTriggerStay2D(Collider2D collision)
