@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: a1b642d4b5cdb884aae1245b493e311e
+guid: 7409d488276c0404abcc5dcbed5604eb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4849690156582959435
-    second: char2_walk-Sheet_0
+      213: 8890949404622329460
+    second: DRONE-Sheet_0
   - first:
-      213: 1482887273021636794
-    second: char2_walk-Sheet_1
+      213: 4085553748588876887
+    second: DRONE-Sheet_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char2_walk-Sheet_0
+      name: DRONE-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -123,14 +123,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b49f5dda08f8d4340800000000000000
-      internalID: 4849690156582959435
+      spriteID: 4761c72906ff26b70800000000000000
+      internalID: 8890949404622329460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char2_walk-Sheet_1
+      name: DRONE-Sheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -144,8 +144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab0076e3e16449410800000000000000
-      internalID: 1482887273021636794
+      spriteID: 754d767fc7dc2b830800000000000000
+      internalID: 4085553748588876887
       vertices: []
       indices: 
       edges: []

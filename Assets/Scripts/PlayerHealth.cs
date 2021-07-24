@@ -8,27 +8,59 @@ public class PlayerHealth : MonoBehaviour
     public int Health = 100;
     public Image healthBar;
 
-    private float timeDelay = 0;
+    private float fireTimeDelay = 0;
+    private float waterTimeDelay = 0;
+    private float enemyTimeDelay = 0;
+
     void Update()
     {
-        if (timeDelay > 0)
+        if (fireTimeDelay > 0)
         {
-            timeDelay -= Time.deltaTime;
+            fireTimeDelay -= Time.deltaTime;
         }
-        if(timeDelay < 0)
+        if(fireTimeDelay < 0)
         {
-            print("RAN");
-            timeDelay = 0;
+            fireTimeDelay = 0;
         }
-        print(timeDelay);
+
+        if (waterTimeDelay > 0)
+        {
+            waterTimeDelay -= Time.deltaTime;
+        }
+        if (waterTimeDelay < 0)
+        {
+            waterTimeDelay = 0;
+        }
+
+        if (enemyTimeDelay > 0)
+        {
+            enemyTimeDelay -= Time.deltaTime;
+        }
+        if (enemyTimeDelay < 0)
+        {
+            enemyTimeDelay = 0;
+        }
+
         healthBar.fillAmount = Mathf.Clamp(Health / 100f, 0, 1f);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Fire" && timeDelay <= .01f)
+        if(collision.gameObject.tag == "Fire" && fireTimeDelay <= .01f)
         {
-            timeDelay = 1;
-            Health -= 15;
+            fireTimeDelay = 1;
+            Health -= 35;
+        }
+
+        if (collision.gameObject.tag == "Water" && waterTimeDelay <= .01f)
+        {
+            waterTimeDelay = .5f;
+            Health -= 5;
+        }
+
+        if (collision.gameObject.tag == "Enemy" && enemyTimeDelay <= .01f)
+        {
+            enemyTimeDelay = .5f;
+            Health -= 25;
         }
     }
 }
