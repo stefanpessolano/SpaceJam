@@ -7,6 +7,7 @@ public class Move : MonoBehaviour
     public Rigidbody2D rigidbody2D;
     public float thrust = 50;
     public float maxSpeed = 3.2f;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,15 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(rigidbody2D.velocity.magnitude > 1)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+
         if (rigidbody2D.velocity.magnitude > maxSpeed)
         {
             rigidbody2D.velocity = rigidbody2D.velocity.normalized * maxSpeed;
