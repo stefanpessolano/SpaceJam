@@ -10,7 +10,7 @@ public class WindThrust : MonoBehaviour
     {
         if (collision.gameObject.tag == "Wind")
         {
-            GetComponent<Rigidbody2D>().AddForce(collision.gameObject.transform.right * windThrust);
+            GetComponent<Rigidbody2D>().AddForce(collision.gameObject.transform.up * windThrust);
         }
     }
 }
