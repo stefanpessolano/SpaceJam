@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - walls
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - walls
   - Water
   - UI
   - 
@@ -41,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: walls
+    uniqueID: 666755025
     locked: 0
