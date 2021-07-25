@@ -11,13 +11,15 @@ public class BossArm : MonoBehaviour
     public float angle;
     public float offset;
 
-    public float cooldown = .5f;
+    public float cooldown = 1f;
     void Update()
     {
         if(cooldown <= 0)
         {
-            Instantiate(orb, barrel.transform.position, barrel.transform.rotation);
-            cooldown = .5f;
+            GameObject bossOrb = Instantiate(orb, barrel.transform.position, barrel.transform.rotation);
+            Destroy(bossOrb, 3);
+            cooldown = 1f;
+            
         }
         cooldown -= Time.deltaTime;
 
