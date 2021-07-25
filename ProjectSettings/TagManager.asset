@@ -16,6 +16,8 @@ TagManager:
   - electricPedestal
   - firePedestal
   - waterPedestal
+  - BossBullet
+  - Heart
   layers:
   - Default
   - TransparentFX

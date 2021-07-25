@@ -16,10 +16,10 @@ public class Shooting : MonoBehaviour
   
      void Update()
      {
-        if (Input.GetKeyDown("1"))
-        {
-            heavy = !heavy;
-        }
+        //if (Input.GetKeyDown("1"))
+       // {
+       //     heavy = !heavy;
+        //}
          if (Input.GetButtonDown("Fire1") && cooldown <= 0)
          {
              Shoot();
@@ -34,13 +34,19 @@ public class Shooting : MonoBehaviour
 
         if (heavy)
         {
-            gun.SetActive(false);
-            heavyGun.SetActive(false);
+            gun.GetComponent<SpriteRenderer>().enabled = false;
+            heavyGun.GetComponent<SpriteRenderer>().enabled = true;
+
+            gun.GetComponent<Shooting>().enabled = false;
+            heavyGun.GetComponent<Shooting>().enabled = true;
         }
         else
         {
-            gun.SetActive(true);
-            heavyGun.SetActive(true);
+            gun.GetComponent<SpriteRenderer>().enabled = true;
+            heavyGun.GetComponent<SpriteRenderer>().enabled = false;
+
+            gun.GetComponent<Shooting>().enabled = true;
+            heavyGun.GetComponent<Shooting>().enabled = false;
         }
      }
  	
