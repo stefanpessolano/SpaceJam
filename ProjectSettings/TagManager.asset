@@ -9,6 +9,7 @@ TagManager:
   - Water
   - Enemy
   - Bullet
+  - BossBullet
   layers:
   - Default
   - TransparentFX

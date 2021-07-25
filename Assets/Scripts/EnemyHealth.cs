@@ -16,15 +16,15 @@ public class EnemyHealth : MonoBehaviour
     {
         if(Health == 0)
         {
-            Destroy(gameObject, .5f);
+            Destroy(gameObject, .3f);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("TRIGGER");
         if(other.gameObject.tag == "Bullet")
         {
+            Destroy(other.gameObject);
             Health--;
         }
     }
