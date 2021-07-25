@@ -55,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
         if(collision.gameObject.tag == "Fire" && fireTimeDelay <= .01f)
         {
             fireTimeDelay = 1;
-            Health -= 35;
+            Health -= 25;
         }
 
         if (collision.gameObject.tag == "Water" && waterTimeDelay <= .01f)
