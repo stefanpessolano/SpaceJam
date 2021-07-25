@@ -9,7 +9,7 @@ public class Shooting : MonoBehaviour
      public GameObject BulletPrefab;
      public float cooldown = 0.5f;
      private int fireRate = 3;
- 
+    public bool heavy = false;
      public float bulletForce = 10f;
   
      void Update()
@@ -32,8 +32,14 @@ public class Shooting : MonoBehaviour
      
          GameObject bullet = Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
          Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-         rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
+        if (!heavy)
+        {
+            rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
+        }
+        else
+        {
+            rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        }
          Destroy(bullet, 3f);
-         
      }
  }

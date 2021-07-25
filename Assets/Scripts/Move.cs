@@ -9,6 +9,11 @@ public class Move : MonoBehaviour
     public float maxSpeed = 3.2f;
     public Animator animator;
 
+    bool windOrb = false;
+    bool fireOrb = false;
+    bool electricOrb = false;
+    bool waterOrb = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,5 +53,29 @@ public class Move : MonoBehaviour
             rigidbody2D.AddForce(transform.right * thrust);
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "windPedestal")
+        {
+            windOrb = true;
+            Destroy(collision.gameObject, 1f);
+        }
+        if (collision.gameObject.tag == "electricPedestal")
+        {
+            electricOrb = true;
+            Destroy(collision.gameObject, 1f);
+        }
+        if (collision.gameObject.tag == "firePedestal")
+        {
+            fireOrb = true;
+            Destroy(collision.gameObject, 1f);
+        }
+        if (collision.gameObject.tag == "waterPedestal")
+        {
+            waterOrb = true;
+            Destroy(collision.gameObject, 1f);
+        }
     }
 }

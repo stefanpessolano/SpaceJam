@@ -9,6 +9,9 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * moveSpeed);
+        if (Vector3.Distance(player.transform.position, transform.position) < 4)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * moveSpeed);
+        }
     }
 }

@@ -9,7 +9,11 @@ TagManager:
   - Water
   - Enemy
   - Bullet
-  - BossBullet
+  - Electric
+  - Companion
+  - walls
+  - windPedestal
+  - electricPedestal
   layers:
   - Default
   - TransparentFX
