@@ -57,6 +57,6 @@ public class Shooting : MonoBehaviour
         {
             rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
         }
-         Destroy(bullet, 3f);
+         Destroy(bullet, 5f);
      }
  }

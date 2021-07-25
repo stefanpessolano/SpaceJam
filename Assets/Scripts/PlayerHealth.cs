@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -42,6 +43,12 @@ public class PlayerHealth : MonoBehaviour
         }
 
         healthBar.fillAmount = Mathf.Clamp(Health / 100f, 0, 1f);
+
+        if(Health <= 0)
+        {
+            Health = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -60,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Enemy" && enemyTimeDelay <= .01f)
         {
             enemyTimeDelay = .5f;
-            Health -= 25;
+            Health -= 5;
         }
         if (collision.gameObject.tag == "Electric")
         {
@@ -68,6 +75,10 @@ public class PlayerHealth : MonoBehaviour
         }
         if (collision.gameObject.tag == "BossBullet" ){
         	Health -= 30;
+        }
+        if (collision.gameObject.tag == "Heart")
+        {
+            Health = 100;
         }
     }
 }

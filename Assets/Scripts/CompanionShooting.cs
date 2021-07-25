@@ -12,6 +12,7 @@ public class CompanionShooting : MonoBehaviour
     public bool heavy = false;
     public float bulletForce = 10f;
     public GameObject Player;
+    public int dist = 8;
 
     void Update()
     {
@@ -31,7 +32,7 @@ public class CompanionShooting : MonoBehaviour
 
     void Shoot()
     {
-        if (Vector3.Distance(transform.position, Player.transform.position) < 8)
+        if (Vector3.Distance(transform.position, Player.transform.position) < dist)
         {
             GameObject bullet = Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
@@ -43,7 +44,7 @@ public class CompanionShooting : MonoBehaviour
             {
                 rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
             }
-            Destroy(bullet, 3f);
+            Destroy(bullet, 5f);
         }
     }
 }

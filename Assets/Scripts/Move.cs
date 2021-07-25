@@ -13,6 +13,7 @@ public class Move : MonoBehaviour
     public GameObject firePed;
     public GameObject elecPed;
     public GameObject waterPed;
+    public GameObject barrier;
 
     bool windOrb = false;
     bool fireOrb = false;
@@ -27,6 +28,11 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(windOrb && electricOrb && fireOrb)
+        {
+            barrier.SetActive(false);
+        }
+
         if(rigidbody2D.velocity.magnitude > 1)
         {
             animator.SetBool("isWalking", true);
