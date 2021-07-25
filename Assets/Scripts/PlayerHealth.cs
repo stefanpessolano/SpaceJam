@@ -10,12 +10,10 @@ public class PlayerHealth : MonoBehaviour
 
     private float fireTimeDelay = 0;
     private float waterTimeDelay = 0;
-
-    private float enemyTimeDelay = 3;
+    private float enemyTimeDelay = 0;
 
     void Update()
     {
-
         if (fireTimeDelay > 0)
         {
             fireTimeDelay -= Time.deltaTime;
@@ -43,8 +41,6 @@ public class PlayerHealth : MonoBehaviour
             enemyTimeDelay = 0;
         }
 
-
-
         healthBar.fillAmount = Mathf.Clamp(Health / 100f, 0, 1f);
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -66,10 +62,8 @@ public class PlayerHealth : MonoBehaviour
             enemyTimeDelay = .5f;
             Health -= 25;
         }
-
-        if (collision.gameObject.tag == "Electric")
-        {
-            Health -= 100;
+        if(collision.gameObject.tag == "BossBullet" ){
+        	Health -= 30;
         }
     }
 }
