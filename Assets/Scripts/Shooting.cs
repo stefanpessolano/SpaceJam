@@ -11,9 +11,15 @@ public class Shooting : MonoBehaviour
      private int fireRate = 3;
     public bool heavy = false;
      public float bulletForce = 10f;
+    public GameObject gun;
+    public GameObject heavyGun;
   
      void Update()
      {
+        if (Input.GetKeyDown("1"))
+        {
+            heavy = !heavy;
+        }
          if (Input.GetButtonDown("Fire1") && cooldown <= 0)
          {
              Shoot();
@@ -25,6 +31,17 @@ public class Shooting : MonoBehaviour
              
          }
          cooldown -= Time.deltaTime;
+
+        if (heavy)
+        {
+            gun.SetActive(false);
+            heavyGun.SetActive(false);
+        }
+        else
+        {
+            gun.SetActive(true);
+            heavyGun.SetActive(true);
+        }
      }
  	
      void Shoot()
