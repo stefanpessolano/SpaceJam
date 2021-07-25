@@ -46,7 +46,14 @@ public class Shooting : MonoBehaviour
  	
      void Shoot()
      {
-     
+        if (!heavy)
+        {
+            FindObjectOfType<AudioManager>().Play("shot");
+        }
+        else
+        {
+            FindObjectOfType<AudioManager>().Play("heavyshot");
+        }
          GameObject bullet = Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
          Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (!heavy)

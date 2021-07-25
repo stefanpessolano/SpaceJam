@@ -589,6 +589,10 @@ MonoBehaviour:
   thrust: 20
   maxSpeed: 3
   animator: {fileID: 285754001}
+  windPed: {fileID: 0}
+  firePed: {fileID: 0}
+  elecPed: {fileID: 0}
+  waterPed: {fileID: 0}
 --- !u!114 &285754000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,6 +819,8 @@ MonoBehaviour:
   cooldown: 0.5
   heavy: 0
   bulletForce: 10
+  gun: {fileID: 0}
+  heavyGun: {fileID: 0}
 --- !u!1 &352728157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,6 +2298,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388711620}
   m_CullTransparentMesh: 1
+--- !u!1 &1424994799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1424994801}
+  - component: {fileID: 1424994800}
+  m_Layer: 0
+  m_Name: sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1424994800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424994799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34018aa0a62dd3a42bb000b47c938cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stop_sound: level1
+  start_sound: boss
+--- !u!4 &1424994801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424994799}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1567209137
 PrefabInstance:
   m_ObjectHideFlags: 0
