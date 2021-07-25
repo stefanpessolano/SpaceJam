@@ -14,16 +14,19 @@ public class BossArm : MonoBehaviour
     public float cooldown = 1f;
     void Update()
     {
-        if(cooldown <= 0)
+        if (Vector3.Distance(transform.position, player.transform.position) < 24)
         {
-            GameObject bossOrb = Instantiate(orb, barrel.transform.position, barrel.transform.rotation);
-            Destroy(bossOrb, 3);
-            cooldown = 1f;
-            
-        }
-        cooldown -= Time.deltaTime;
+            if (cooldown <= 0)
+            {
+                GameObject bossOrb = Instantiate(orb, barrel.transform.position, barrel.transform.rotation);
+                Destroy(bossOrb, 3);
+                cooldown = 1f;
 
-        angle = Mathf.Atan2(player.transform.position.y - transform.position.y, player.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + offset));
+            }
+            cooldown -= Time.deltaTime;
+
+            angle = Mathf.Atan2(player.transform.position.y - transform.position.y, player.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + offset));
+        }
     }
 }

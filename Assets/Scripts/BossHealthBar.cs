@@ -15,6 +15,6 @@ public class BossHealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(Boss.transform.position.x, Boss.transform.position.y - 5f, 0);
+        transform.position = Camera.main.WorldToScreenPoint(new Vector3(Boss.transform.position.x, Boss.transform.position.y - 5f, 0));
     }
 }

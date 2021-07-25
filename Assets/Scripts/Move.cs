@@ -15,9 +15,9 @@ public class Move : MonoBehaviour
     public GameObject waterPed;
     public GameObject barrier;
 
-    bool windOrb = false;
-    bool fireOrb = false;
-    bool electricOrb = false;
+    public bool windOrb = false;
+    public bool fireOrb = false;
+    public bool electricOrb = false;
     bool waterOrb = false;
 
     // Start is called before the first frame update
