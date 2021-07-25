@@ -62,7 +62,11 @@ public class PlayerHealth : MonoBehaviour
             enemyTimeDelay = .5f;
             Health -= 25;
         }
-        if(collision.gameObject.tag == "BossBullet" ){
+        if (collision.gameObject.tag == "Electric")
+        {
+            Health -= 100;
+        }
+        if (collision.gameObject.tag == "BossBullet" ){
         	Health -= 30;
         }
     }
