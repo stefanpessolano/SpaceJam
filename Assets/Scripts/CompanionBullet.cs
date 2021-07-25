@@ -6,7 +6,7 @@ public class CompanionBullet : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Companion" && collision.gameObject.tag != "Bullet")
+        if (collision.gameObject.tag != "Companion")
         {
             Destroy(gameObject);
         }

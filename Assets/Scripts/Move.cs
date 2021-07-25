@@ -9,6 +9,11 @@ public class Move : MonoBehaviour
     public float maxSpeed = 3.2f;
     public Animator animator;
 
+    public GameObject windPed;
+    public GameObject firePed;
+    public GameObject elecPed;
+    public GameObject waterPed;
+
     bool windOrb = false;
     bool fireOrb = false;
     bool electricOrb = false;
@@ -60,21 +65,28 @@ public class Move : MonoBehaviour
         if(collision.gameObject.tag == "windPedestal")
         {
             windOrb = true;
+            windPed.SetActive(true);
             Destroy(collision.gameObject, 1f);
         }
         if (collision.gameObject.tag == "electricPedestal")
         {
             electricOrb = true;
+            elecPed.SetActive(true);
+
             Destroy(collision.gameObject, 1f);
         }
         if (collision.gameObject.tag == "firePedestal")
         {
             fireOrb = true;
+            firePed.SetActive(true);
+
             Destroy(collision.gameObject, 1f);
         }
         if (collision.gameObject.tag == "waterPedestal")
         {
             waterOrb = true;
+            waterPed.SetActive(true);
+
             Destroy(collision.gameObject, 1f);
         }
     }
